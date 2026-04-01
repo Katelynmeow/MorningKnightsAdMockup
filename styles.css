@@ -1,0 +1,351 @@
+/* ============================================================
+   Morning Knights Toastmasters Club Website Styles
+   Recreation of heritage-style advertisement
+   ============================================================ */
+
+
+/* ======== COLOR PALETTE (EDIT HERE FOR COLOR CHANGES) ======== */
+:root {
+    /* Primary colors - match the ad design */
+    --maroon-main: #5c2c2c;        /* Deep maroon for banners */
+    --maroon-dark: #4a1f1f;        /* Darker maroon for accents */
+    --cream-main: #f4ead6;         /* Parchment cream background */
+    --cream-light: #faf8f3;        /* Lighter cream for text areas */
+    --text-dark: #2a2a2a;          /* Dark text for readability */
+    --gold-accent: #c9a961;        /* Muted gold for subtle accents */
+    --gold-light: #dfc9a8;         /* Light gold for borders */
+    
+    /* Font families - update these if you add custom fonts later */
+    --font-serif: Georgia, 'Times New Roman', serif;  /* Main serif font */
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; /* Fallback */
+}
+
+
+/* ======== GLOBAL STYLES ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Parchment background with subtle texture effect */
+    background-color: var(--cream-main);
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.01) 0px,
+            rgba(0, 0, 0, 0.01) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+    color: var(--text-dark);
+    font-family: var(--font-serif);
+    line-height: 1.7;
+    font-size: 16px;
+    padding: 20px 10px;
+}
+
+/* Main container - centers content and sets max width for poster feel */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--cream-light);
+    border: 3px solid var(--gold-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ======== TOP BANNER (TITLE SECTION) ======== */
+/* Deep maroon banner matching the original ad */
+.banner-top {
+    background-color: var(--maroon-main);
+    color: var(--cream-light);
+    padding: 40px 20px 35px;
+    text-align: center;
+    border-bottom: 8px solid var(--gold-light);
+}
+
+.club-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.club-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    letter-spacing: 2px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/* On mobile, reduce banner font sizes */
+@media (max-width: 768px) {
+    .club-title {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .club-subtitle {
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+    }
+}
+
+
+/* ======== LOCATION & CHARTER DATE ======== */
+.location-section {
+    background-color: var(--cream-light);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--gold-light);
+}
+
+.location-text {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+}
+
+
+/* ======== CELEBRATION HEADING ("Celebrating 54 Years") ======== */
+.celebration-section {
+    background-color: var(--cream-light);
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.celebration-heading {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: normal;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .celebration-heading {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* ======== MAIN CONTENT AREA (Knight Image + Members Box) ======== */
+.content-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 30px;
+    gap: 30px;
+    background-color: var(--cream-light);
+}
+
+/* Knight illustration section */
+.knight-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+}
+
+.knight-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+/* Notable Members box - sits on the right */
+.members-box {
+    flex: 0 1 280px;
+    background-color: var(--cream-light);
+    border: 3px solid var(--maroon-main);
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.members-title {
+    background-color: var(--maroon-main);
+    color: var(--cream-light);
+    padding: 15px 20px;
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid var(--gold-light);
+}
+
+.members-list {
+    list-style: none;
+    padding: 25px 20px;
+}
+
+.members-list li {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gold-accent);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.members-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.member-name {
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.member-credentials {
+    font-size: 0.9rem;
+    color: var(--maroon-dark);
+}
+
+.member-year {
+    display: block;
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* On tablet and mobile, stack content vertically */
+@media (max-width: 768px) {
+    .content-main {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    
+    .knight-section {
+        min-height: 250px;
+    }
+    
+    .members-box {
+        flex: 1;
+        order: -1; /* Display members box above knight on mobile */
+    }
+}
+
+
+/* ======== MAROON RIBBON BANNER ======== */
+/* Decorative band with tagline */
+.ribbon-banner {
+    background-color: var(--maroon-main);
+    padding: 25px 30px;
+    text-align: center;
+    border-top: 4px solid var(--gold-light);
+    border-bottom: 4px solid var(--gold-light);
+    margin: 0;
+}
+
+.ribbon-text {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--cream-light);
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .ribbon-text {
+        font-size: 1.05rem;
+    }
+}
+
+
+/* ======== BODY TEXT SECTION ======== */
+/* Two paragraphs telling the club's story */
+.body-content {
+    padding: 40px 35px;
+    background-color: var(--cream-light);
+}
+
+.body-paragraph {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.body-paragraph:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .body-content {
+        padding: 30px 20px;
+    }
+    
+    .body-paragraph {
+        text-align: left;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ======== FOOTER SECTION (Pull Quote & Website) ======== */
+/* Bottom content area with tagline and website URL */
+.footer-content {
+    background-color: var(--cream-light);
+    padding: 40px 30px;
+    text-align: center;
+    border-top: 2px solid var(--gold-light);
+}
+
+.pull-quote {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: normal;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.club-website {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: normal;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+    .pull-quote {
+        font-size: 1.15rem;
+    }
+    
+    .club-website {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ======== PRINT STYLES (Optional - for printing) ======== */
+/* If someone prints the page, it will look good */
+@media print {
+    body {
+        padding: 0;
+        background-image: none;
+    }
+    
+    .container {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+    }
+}
